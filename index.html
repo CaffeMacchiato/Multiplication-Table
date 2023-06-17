@@ -1,0 +1,61 @@
+<!--
+File: index.html
+GUI Assignment 3: Creating an Interactive Dynamic Table
+Masha Tsykora, UMass Lowell Computer Science, mary_tsykora@student.uml.edu
+Copyright (c) 2023 by Masha Tsykora. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+Updated on 6/17/23 at 7:00am.
+Instructor: Professor Wenjin Zhou
+Sources of Help: W3Schools and Javatpoint
+Brief Overview: I created a webpage that lets a user enter a column lower bound, a column upper bound,
+a row lower bound, and a row upper bound. If the user doesn't enter a valid input in any of the forms, 
+then an appropriate error message will be displayed underneath the "Submit" button.
+Unfortunately, I wasn't able to figure out how to make the table scrollable, so it will stretch across
+the page for larger inputs.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Display Variables</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+    <body>
+        <h1> Interactive Dynamic Multiplication Table </h1>
+        <h3> Enter integer values between 1 and 50 <br> 
+             Make sure that the lower bounds are smaller than the upper bounds!<br>
+             No special characters or non-integer inputs are allowed.<br>
+             If you enter a decimal such as '6.3', then the program will round it down to '6'</h3>
+        <h4> If you leave any of the fields blank or enter a non-integer character and click submit, an error message
+             will display underneath the "Submit" button. </h4>
+    
+        <form id="boundsForm">
+
+            <label for="clbound">Column Lower Bound:</label>
+            <input type="text" id="clbound" name="clbound"><br>
+
+            <label for="cubound">Column Upper Bound:</label>
+            <input type="text" id="cubound" name="cubound"><br>
+
+            <label for="rlbound">Row Lower Bound:</label>
+            <input type="text" id="rlbound" name="rlbound"><br>
+
+            <label for="rubound">Row Upper Bound:</label>
+            <input type="text" id="rubound" name="rubound"><br>
+
+            <!-- <button type="button" id="mybutton">Submit</button> -->
+            <button type="submit" id="submitButton">Submit</button> 
+
+        </form>
+
+        <p id="isEmptyError"></p>
+
+        <p id="validationError"></p>
+
+        <p id="lowerBoundError"></p>
+
+        <div id="multiTable"></div>
+    </body>
+</html>
